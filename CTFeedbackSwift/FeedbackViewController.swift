@@ -128,7 +128,8 @@ extension FeedbackViewController {
         case _ as TopicItem:
             wireframe.showTopicsView(with: feedbackEditingService)
         case _ as AttachmentItem:
-            wireframe.showAttachmentActionSheet(deleteAction: attachmentDeleteAction)
+            let cell = tableView.cellForRow(at: indexPath)!
+            wireframe.showAttachmentActionSheet(sourceView:cell, deleteAction: attachmentDeleteAction)
         default: ()
         }
         tableView.deselectRow(at: indexPath, animated: true)
