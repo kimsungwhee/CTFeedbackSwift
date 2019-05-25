@@ -628,6 +628,7 @@
 				TargetAttributes = {
 					6A46387A1F6130D600CD41BC = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					6A4638831F6130D600CD41BC = {
@@ -1014,7 +1015,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.caph.CTFeedbackSwift;
 				PRODUCT_NAME = CTFeedbackSwift;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1036,7 +1037,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.caph.CTFeedbackSwift;
 				PRODUCT_NAME = CTFeedbackSwift;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

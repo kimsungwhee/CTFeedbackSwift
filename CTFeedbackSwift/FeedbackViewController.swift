@@ -56,7 +56,7 @@ public class FeedbackViewController: UITableViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.keyboardDismissMode = .onDrag
 
@@ -221,7 +221,10 @@ extension FeedbackViewController {
 
 extension FeedbackViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     public func imagePickerController(_ picker: UIImagePickerController,
-                                      didFinishPickingMediaWithInfo info: [String : Any]) {
+                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         switch getMediaFromImagePickerInfo(info) {
         case let media?:
             feedbackEditingService.update(attachmentMedia: media)
@@ -257,4 +260,9 @@ extension FeedbackViewController: UIViewControllerTransitioningDelegate {
         return DrawUpPresentationController(presentedViewController: presented,
                                             presenting: presenting)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
